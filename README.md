@@ -2,18 +2,18 @@
 ---
 ## Table of Content
 1. [Introduce the team](#1introduce-the-team)
-2. [What is WRO?](#2what-is-wro?)
-   - [Why do we choose Future Engineer](#why-do-we-choose-Future-Engineer)
+2. [What is WRO?](#2what-is-wro)
+   - [Why do we choose Future Engineer](#why-do-we-choose-future-engineer)
 3. [Robot](#3robot)
 4. [Video](#4video)
 5. [Hardware](#5hardware)
-   - Mobility Management
-     - 3D design
-     - Motor
-     - Differential
-     - Steering
-     - Chassis
-     - Assembly
+   - [Mobility Management](##mobility-management)
+     - [3D design](#3d-design)
+     - [Motor](#motor)
+     - [Differential](#differential)
+     - [Steering](#steering)
+     - [Chassis](#chassis)
+     - [Assembly]
    - Power and Sense manaagement
      - Component
      - Sensor
@@ -119,7 +119,7 @@ Future Engineer is one of the interesting categories out of all four, because we
 Our robot is built to meet all the game’s requirements. It runs on two motors: one for steering and one for driving. For sensors, we use LiDAR to detect walls, a camera to recognize traffic light colors in the obstacle challenge, and an IMU to track the car’s position.
 
 ## Mobility management
-   <h3><b>3D design</b></h3><br>
+### 3D design
    <P>Some parts of our robot were 3D design on our own, and some parts we found online and modified them.</P><br>
 
 | Owned 3D design       | Online 3D design  |
@@ -132,44 +132,50 @@ Our robot is built to meet all the game’s requirements. It runs on two motors:
 
 
 
-- <b> Robot's Layer : </b>The robot’s chassis is built in three layers: bottom, middle, and top.<br>
+#### Robot's Layer
 <img src="https://github.com/user-attachments/assets/aaca7009-b4dd-4e82-aebd-a0c9af01f0f8" width=375 height=750><br>
+The robot’s chassis is built in three layers: bottom, middle, and top.<br>
   - <b> Chassis: </b> This layer houses the motors with encoders, the steering servo, and the differential. A cutout at the rear of the chassis accommodates the differential, ensuring smooth operation. At the front, the servo and servo rod control the steering of the front wheels.
   - <b> Middle Layer: </b> This layer supports most of the sensors and electronic components, including the camera, LiDAR, motor driver, camera mount, ESP32, battery, and battery checker.
   - <b> Top Layer: </b> The top layer is reserved for the main computing and power components, such as the Raspberry Pi 5, our custom-designed PCB, and the buck converter.
 
-- <b>Camera Mount:</b> <br>
+#### Camera Mount:
   <img src="https://github.com/user-attachments/assets/510ba08f-254e-48b5-b4e0-090ad0a76fa3" width=375 height=750><br>
  The camera mount is positioned high to allow the camera to easily detect traffic lights during the obstacle challenge. Its base is precisely aligned with the LiDAR mounting screw holes, as the LiDAR is mounted directly beneath the camera. 
-- <b> Battery Checker Holder:</b><br>
+ 
+#### Battery Checker Holder:
 <img width="375" height="750" alt="bat checker" src="https://github.com/user-attachments/assets/f13d800a-2806-4c40-9baf-d081b0c5cf81"><br>
 This holder is designed to securely house the battery checker at the back of the robot. The holder’s hole is 10 mm larger than the battery checker to ensure a snug fit.
-- <b> Battery Holder:</b> <br>
+
+#### Battery Holder
 <img width="375" height="750" alt="bat holder" src="https://github.com/user-attachments/assets/d3af527b-e0ad-4e5e-b33b-040028335573"><br>
 The battery holder is designed to secure the battery in place. Similarly, its hole is 10 mm larger than the battery to prevent it from falling out while the robot is in motion.
-- <b> Right Rear Wheel Holder: </b><br>
+
+#### Right Rear Wheel Holder
 <img src="https://github.com/user-attachments/assets/2246a5c2-5962-460f-b24b-a8b475e72799" width=375 height=750><br>
 This component stabilizes the drive shaft extending from the differential to the right rear wheel.
-- <b> Differential Gear: </b><br>
+
+#### Differential Gear
   <img width="375" height="375" alt="image" src="https://github.com/user-attachments/assets/2f343618-e08c-4044-a46f-e895a8b7485a" ><br>
    We sourced the design from GrabCAD and modified the central hole of the gear to fit the motor shaft precisely.[link](https://grabcad.com/library/lego-technic-gears-1)
-- <b> Differential Case:</b><br>
+   
+#### Differential Case
   <img width="375" height="375" alt="image" src="https://github.com/user-attachments/assets/fb99b4ba-bc86-428c-8ea5-d4b03283b81f"><br>
   We adapted the design from [Team StormsNGR](https://github.com/MoCsabi/WRO2024-FE-StormsNGR/blob/main/models/Differential%20Gear%20House.stl), modifying certain parts to accommodate a different motor and to provide a secure mount for the motor.
 
-<h3><b>Motor</b></h3>
+### Motor
 <img width="375" height="375" alt="image" src="https://github.com/user-attachments/assets/45456f2a-1c85-4800-aebb-f3f30f401d74" /><br>
 We selected the JGB37-520B DC motor with encoder to track the distance traveled by the robot. This allows us to determine the motor’s speed, control when the robot needs to turn, and monitor wheel rotations. As a result, the robot can stop precisely at its starting point and execute accurate left and right turns.
 
-<h3><b>Differential</b></h3>
+### Differential
 <img width="292" height="173" alt="image" src="https://github.com/user-attachments/assets/df867e55-7b48-4ea0-a3f0-5153c15578fb" /><br>
 The robot uses a LEGO differential, which allows the left and right wheels to rotate at different speeds when turning, enabling smooth cornering. We also chose this differential because it easily connects to the LEGO wheels used on the robot, simplifying assembly and ensuring reliable performance.
 
-<h3><b>Steering</b></h3>
+### Steering
 <img width="250" height="500" alt="Front Wheel" src="https://github.com/user-attachments/assets/bffc9a41-fa0f-4189-9bd0-e1eee96b88b9" /><br>
 The robot uses a servo motor and a servo rod for steering. The servo is controlled to rotate at specific angles using a PID controller. The servo rod is attached to an arm connected to the servo shaft, which pushes or pulls the linkage as the servo rotates, causing the wheels to pivot in the desired direction.
 
-<h3><b>Chassis</b></h3>
+### Chassis
 <img src=https://github.com/user-attachments/assets/d28ae8a6-d40f-4ef8-92fb-1cab2617d32a width=500 height=1000><br>
 
 - <b>Front section</b>: Designed to allow smoother turning and wheel rotation without interference from other parts of the robot. This section also accommodates the servo motor.
