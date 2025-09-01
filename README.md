@@ -23,7 +23,7 @@
 6. [Software](#6software)
    - [ROS2](#ros2)
    - [OpenCV](#open-cv)
-   - [Code for components](#code-for-components)
+   - [Code for components](#code-for-component)
      - [Camera](#camera)
      - [Lidar](#lidar)
      - [Motor](#motor)
@@ -33,7 +33,7 @@
    - [Strategy](#strategy)
      - [Opene Challenge](#open-challenge)
      - [Obstacle Challenge](#obstacle-challenge)
-8. [Conclusion](#8conclusion)
+8. [Conclusion](#8-conclusion)
 ---
 # 1.Introduce the team
 ---
