@@ -124,11 +124,11 @@ Our robot is built to meet all the game’s requirements. It runs on two motors:
 
 | Owned 3D design       | Online 3D design  |
 |-----------------      |------------------ |
-| Robot's Layer         | Differential Grear|
-| Camera mount          | Differential Case |
-| Battery Checker Holder|                   |
-| Battery Holder        |                   |
-|Right rear wheel holder|                   |
+| [Robot's Layer](https://github.com/Yuthisme/WRO-FE-Snoopy-2025/blob/main/models/the%20robot.f3z)| [Differential Grear](https://github.com/Yuthisme/WRO-FE-Snoopy-2025/blob/main/models/differenetial%20gear.f3d)|
+| [Camera mount](https://github.com/Yuthisme/WRO-FE-Snoopy-2025/blob/main/models/cam%20mount.f3d)| [Differential Case](https://github.com/Yuthisme/WRO-FE-Snoopy-2025/blob/main/models/differential%20case.f3d) |
+| [Battery Checker Holder](https://github.com/Yuthisme/WRO-FE-Snoopy-2025/blob/main/models/bat%20checker%20v5.f3d)|                   |
+| [Battery Holder](https://github.com/Yuthisme/WRO-FE-Snoopy-2025/blob/main/models/battery%20holder_.f3d)|                   |
+|[Right rear wheel holder](https://github.com/Yuthisme/WRO-FE-Snoopy-2025/blob/main/models/right%20rear%20wheel%20holder.f3d)|                   |
 
 
 
