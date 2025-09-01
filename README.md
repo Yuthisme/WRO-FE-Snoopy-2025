@@ -34,4 +34,5 @@
      - Obstacle Challenge
 8. [Conclusion](#Conclusion)
 # 1.Introduce the team
-Snoopy is a team of passionate young engineers. We started back in grade 11, when three high school students and our robotics teacher teamed up after being inspired by our seniors winning the Startup Idea Award at the WRO International Round in Panama. Last year, we joined the World Robotics International Round in Türkiye, where we learned a lot and made plenty of new friends.
+<img src="snoopyatturkey.png">
+Snoopy is a team of passionate young engineers. We started back in grade 11(2024), when three high school students and our robotics teacher teamed up after being inspired by our seniors winning the Startup Idea Award at the WRO International Round in Panama. Last year, we joined the World Robotics International Round in Türkiye, where we learned a lot and made plenty of new friends.
