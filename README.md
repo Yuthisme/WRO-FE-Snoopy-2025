@@ -280,7 +280,7 @@ The robot Raspberry Pi serves as the main controller, managing all operations. W
 # 6.Software
 ---
 	
- We decided to use ROS2 as the main framework for our robots, while OpenCV for the camera. ROS2 provides the communication framework that connects different parts of the system, while OpenCV enables the car to process camera images and recognize objects. Together with sensors like LiDAR and cameras, they allow the robot to detect obstacles, identify lanes, and make driving decisions.
+ We decided to use ROS2 as the main framework for our robots, while OpenCV for the camera. ROS2 provides the communication framework that connects different parts of the system, while OpenCV enables the car to process camera images and recognize objects. Together with sensors like LiDAR and cameras, they allow the robot to detect obstacles, identify lanes, and make driving decisions. For the full software documentation including solutions and how we approach problem please go to [CODE DOCUMENTATION](src/README.md).
 
 ## ROS2
 
@@ -296,11 +296,14 @@ To integrate these components, a ROS2-based system is meticulously crafted. LiDA
 
 
 ## Code for Component
-### Camera
-### Lidar
-### Motor
-### Servo
-### IMU
+- [IMU](src/bno055_imu)
+- [Messages](src/fe_interfaces)
+- [Hole Checker](src/find_hole)
+- [Lidar Package for ROS2](src/ldlidar_stl_ros2)
+- [Lidar Codes](src/lidar_ros2)
+- [Motor Control](src/motor_control)
+- [Robot automation](src/my_robot)
+- [Object Detection](src/object_detection)
 ---
 # 7.Obstacle Management
 
