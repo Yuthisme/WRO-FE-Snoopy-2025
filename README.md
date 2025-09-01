@@ -1,7 +1,7 @@
 # <ins> Snoopy: WRO Future Engineer 2025 </ins>
 ---
 ## Table of Content
-1. [Introduce the team](#1.Introduce-the-team)
+1. [Introduce the team](#1introduce-the-team)
 2. [What is WRO?](#2.What-is-WRO?)
    - [Why do we choose Future Engineer](#a.Why-do-we-choose-Future-Engineer)
 3. [Robot](#3.Robot)
