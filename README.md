@@ -3,37 +3,37 @@
 ## Table of Content
 1. [Introduce the team](#1introduce-the-team)
 2. [What is WRO?](#2what-is-wro)
-   - [Why do we choose Future Engineer](#why-do-we-choose-future-engineer)
+   - [Why do we choose Future Engineer](#why-we-choose-future-engineer)
 3. [Robot](#3robot)
-4. [Video](#4video)
-5. [Hardware](#5hardware)
-   - [Mobility Management](##mobility-management)
+4. [Video](#4-video)
+5. [Hardware](#5-hardware)
+   - [Mobility Management](#mobility-management)
      - [3D design](#3d-design)
      - [Motor](#motor)
      - [Differential](#differential)
      - [Steering](#steering)
      - [Chassis](#chassis)
      - [Assembly]
-   - Power and Sense manaagement
-     - Component
-     - Sensor
-     - Power Supply
-     - Microcontroller
-     - Wiring and Scheme
-6. [Software](#Software)
-   - ROS2
-   - OpenCV
-   - Code for components
-     - Camera
-     - Lidar
-     - Motor
-     - Servo
-     - IMU
-7. [Obtacle Management](#Obstacle-management)
-   - Strategy
-     - Opene Challenge
-     - Obstacle Challenge
-8. [Conclusion](#Conclusion)
+   - [Power and Sense manaagement](#power-and-sense-management)
+     - [Component](#component)
+     - [Sensor](#sensor)
+     - [Power Supply](#power-supply)
+     - [Microcontroller](#microcontroller)
+     - [Wiring and Scheme](#wiring-and-scheme)
+6. [Software](#6software)
+   - [ROS2](#ros2)
+   - [OpenCV](#open-cv)
+   - [Code for components](#code-for-components)
+     - [Camera](#camera)
+     - [Lidar](#lidar)
+     - [Motor](#motor)
+     - [Servo](#servo)
+     - [IMU](#imu)
+7. [Obtacle Management](#7obstacle-management)
+   - [Strategy](#strategy)
+     - [Opene Challenge](#open-challenge)
+     - [Obstacle Challenge](#obstacle-challenge)
+8. [Conclusion](#8conclusion)
 ---
 # 1.Introduce the team
 ---
@@ -181,6 +181,97 @@ The robot uses a servo motor and a servo rod for steering. The servo is controll
 - <b>Front section</b>: Designed to allow smoother turning and wheel rotation without interference from other parts of the robot. This section also accommodates the servo motor.
 - <b>Middle section</b>: Serves as the mounting area for the motor. The motor driver and LiDAR are mounted upside down on the second layer of the car, connected above this section.
 - <b>Rear section</b>: Houses the differential and rear wheels, with a cutout that allows the differential to rotate freely. This section also connects the rear wheels to the differential.
+
+## Power and Sense Managament
+### Component
+At the core of our robot, we have a Raspberry Pi 5 with 8GB of RAM. This Raspberry Pi 5 processes all the data sent to the robot by the other components, such as the lidar, camera, motor, and IMU. Here are the listing and purpose:
+
+<p><b>IMU (Inertial Measurement Unit)</b></p><br>
+<p>A device that measures the orientation and acceleration of a moving object. In our self-driving robot, the IMU provides crucial information about the robot's orientation, angular velocity, and linear acceleration. This data is essential for vehicle state estimation, sensor fusion, and control systems.</p><br>
+
+<p><b> LiDAR (Light Detection and Ranging)</b></p><br>
+<p>It emits laser beams to measure distances to objects in its surroundings. It provides a 3D point cloud representation of the environment, enabling the robot to perceive obstacles, terrain, and other relevant features. Key applications of LiDAR in your self-driving robot include obstacle detection and avoidance, mapping and localization, and terrain analysis.</p><br>
+
+<p><b> Raspberry Pi 5 8GB RAM</b></p><br>
+<p>The Raspberry Pi 5 serves as the brain of our self-driving robot. It processes sensor data, executes control algorithms, and communicates with other components. Key functionalities of the Raspberry Pi 5 in your robot include sensor data processing, algorithm execution, communication, and machine learning.</p><br>
+
+<p><b> Motor Driver</b></p><br>
+<p>A motor driver is an electronic circuit that controls the speed and direction of electric motors. It acts as an interface between the Raspberry Pi 5 and the motors, allowing the robot to move forward and backward. Key features of a motor driver include power amplification, direction control, and speed control.</p><br>
+
+<p><b>Motor</b></p><br>
+<p>Motors are the actuators that convert electrical energy into mechanical energy, enabling the robot to move. In our self-driving robot, motors are typically used to drive the wheels. Key characteristics of motors for self-driving robots include torque, speed, and efficiency.</p><br>
+
+<p><b> Servo Motor </b></p><br>
+<p>A servo motor is a rotary actuator with a built-in position sensor. It allows precise control of the angle of rotation, making it ideal for steering mechanisms in self-driving robots. Key features of a servo motor include precision and holding torque.</p><br>
+
+<p><b>Raspberry Pi Camera Module v2</b></p>
+<p>The Raspberry Pi Camera Module v2 is an 8MP camera with a fixed-focus lens. It captures still images up to 3280×2464 and records video at 1080p 30fps, 720p 60fps, or 480p 90fps. It connects to the Pi with a CSI ribbon cable and is commonly used in robotics, vision projects, and security cameras.</p><br>
+
+<p><b>ESP32</b></p><br>
+<p>The ESP32 is a powerful microcontroller with built-in Wi-Fi and Bluetooth. It has many pins for sensors and devices, making it popular for IoT, robotics, and smart gadgets. It’s low-cost, fast, and easy to program with Arduino or MicroPython. We use this to receive data from the Lidar and send the data to the Raspberry Pi</p><br>
+
+<p><b>RGB</b></p><br>
+<p>RGB stands for Red, Green, and Blue, the three primary colors of light. By mixing these colors in different intensities, almost any other color can be created. We use this to tell us when the robot is ready.</p>
+
+### Sensor
+Our robots use multiple sensors for different purposes, like the Lidar we use to detect the wall since it uses lasers to measure the distance between the wall and the robot, so it’ll make it easy to identify how far or how close the robot is when we test the robots in both open and obstacle challenges. The other sensor that we use is the Camera, which we use to detect the color of the traffic light during the obstacle challenge, so it can send a signal to the robot that either turn left or right. We also use IMU to track the position of the robot, we use it to count how many laps the robot has traveled, and to make the robot move in a fixed position.
+
+### Power Supply
+We chose an 11.1V LiPo battery since it can provide us with enough power to run all of our components, such as the Raspberry Pi, servo, motor, and sensors. Since the servo, IMU, and motor encoder have a maximum voltage of 5V, we use a buck converter to step down the 11.1V from the battery to 5V, which is then supplied to the components that require only 5V. Additionally, we use a boost converter to step up the 11.1V to 12V to power the motor.
+
+### Microcontroller
+The robot Raspberry Pi serves as the main controller, managing all operations. We selected the Raspberry Pi for its processing speed, ease of integration with other components, and the ability to upload or modify code via SSH, eliminating the need to connect a USB cable like with Arduino or ESP32.
+
+### Wiring and Scheme
+<p>For wiring, we chose to design our own PCB board that has all the pins that indicate each GPIO pin of the Raspberry Pi 5 and a JST pin for power supply, RGB, Motor encoder, Motor Driver, Motor, IMU, and push button. The screw terminal connectors for the power supply.</p><br>
+<img width="500" height="1000" alt="pi" src="https://github.com/user-attachments/assets/1b490486-4d8a-48fc-b444-5107b55dea68" /><br>
+<img width="580" height="566" alt="image" src="https://github.com/user-attachments/assets/dad754b6-7eaa-4d3d-ad41-a044ed9f8af4" /><br>
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/8aae5d95-c62f-4fe5-8ae7-960d1ce65ea2" /><br>
+<p>This schematic illustrates a robot control system designed around a Raspberry Pi 5, featuring an IMU for orientation, encoders for wheel feedback, DC motors for driving, and a servo for steering or actuation.</p>
+
+---
+# 6.Software
+---
+	
+ We decided to use ROS2 as the main framework for our robots, while OpenCV for the camera. ROS2 provides the communication framework that connects different parts of the system, while OpenCV enables the car to process camera images and recognize objects. Together with sensors like LiDAR and cameras, they allow the robot to detect obstacles, identify lanes, and make driving decisions.
+
+## ROS2
+
+<img src="https://github.com/user-attachments/assets/89468c08-233b-4d48-a26b-9ab78021b3c2" width=500 height=1000><br>
+
+ROS2, the Robot Operating System 2, acts as the central nervous system of the self-driving car. It provides a flexible framework for organizing and coordinating various software components, including nodes, topics, and services. Nodes perform specific tasks, such as sensor data processing, control algorithms, or communication with other nodes. Topics are channels for publishing and subscribing to messages, enabling data exchange between nodes. Services provide a request-response mechanism for nodes to interact and request services from each other.
+
+## Open CV
+
+OpenCV, the Open Source Computer Vision Library, empowers the car to "see" the world around it. It enables a wide range of computer vision techniques, including image processing, feature detection, object detection and tracking, and optical flow.
+
+To integrate these components, a ROS2-based system is meticulously crafted. LiDAR data is captured and processed to generate a point cloud representation of the environment, while camera images are captured and pre-processed using OpenCV to enhance clarity and contrast. LiDAR-based perception uses point cloud data to detect obstacles and create a 3D map of the surroundings, while camera-based perception employs OpenCV to identify lanes, traffic signs, and other relevant visual cues.
+
+
+## Code for Component
+### Camera
+### Lidar
+### Motor
+### Servo
+### IMU
+---
+# 7.Obstacle Management
+
+There are two challenges: the Open Challenge and the Obstacle Challenge. The open challenge requires the robot to drive three full laps around the game field and stop at its starting point. While the Obstacle challenge requires the robot to drive 3 full laps too but there are traffic lights and a parking lot. GREEN = right, RED = left. 
+
+## Strategy 
+### Open Challenge
+<img width="638" height="530" alt="image" src="https://github.com/user-attachments/assets/dc2c9a11-ced6-4ca3-af5e-93527d3ef58c" /><br>
+Our robot begins its run when the push button is pressed, activating its wall-tracking system. Using LiDAR and IMU data, the robot simultaneously monitors both the left and right walls to stay centered. When the left or right wall shows a gap (detected as a hole), the robot recognizes it as a turn. It then follows the wall, making a precise 90° turn, which is counted as one completed turn. If no hole is detected, the robot continues moving forward while keeping track of both walls. The ESP32 ensures fast and reliable data transfer from the LiDAR to the Raspberry Pi 5, which fuses data from the IMU and Pi Camera Module v2 for orientation, stability, and lane recognition. After completing 12 turns, the robot executes a controlled stop. This strategy minimizes wall contact, ensures stable turns, and achieves accurate lap completion.
+
+### Obstacle Challenge
+In the Obstacle Challenge, our approach is extended to include traffic sign recognition and parking. The camera identifies red and green pillars, which dictate whether the vehicle should stay on the right or left side of the lane. The LiDAR, with data again transmitted through the ESP32 module, confirms obstacle distances and ensures safe path planning, while the IMU stabilizes navigation during detours. The Raspberry Pi 5 executes a state-machine control system that interprets sign information, chooses the correct lane, and adjusts the steering smoothly to avoid moving signs, since avoiding contact yields higher points. After completing three laps, the camera and LiDAR are used together to detect the magenta parking lot boundaries. The vehicle then executes a precise parallel parking maneuver, carefully controlling the steering servo and motors to ensure it is fully inside the parking space without touching the barriers. The RGB LEDs signal the vehicle’s status throughout (ready, running, or parking), helping the team and judges monitor progress.
+
+---
+# 8. Conclusion
+Through countless hours of design, coding, testing, and teamwork, Team Snoopy Cambodia has developed a robot that balances innovation with reliability. By combining ROS2, OpenCV, LiDAR, IMU, and a Raspberry Pi 5, we created a self-driving system capable of navigating open tracks, handling obstacles, and performing precise self-parking.<br>
+This journey has been more than just building a robot it has been about learning, problem-solving, and pushing our creativity to new levels. Each challenge taught us how to improve our engineering, strengthen our teamwork, and bring our vision closer to reality.<br>
+As we move forward to WRO 2025, we are proud of what we’ve achieved and excited to keep innovating, improving, and representing Cambodia on the international stage.
 
 
 
