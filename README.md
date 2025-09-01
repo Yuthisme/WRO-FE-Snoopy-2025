@@ -14,7 +14,7 @@
      - [Steering](#steering)
      - [Chassis](#chassis)
      - [Assembly]
-   - [Power and Sense manaagement](#power-and-sense-management)
+   - [Power and Sense management](#power-and-sense-managament)
      - [Component](#component)
      - [Sensor](#sensor)
      - [Power Supply](#power-supply)
