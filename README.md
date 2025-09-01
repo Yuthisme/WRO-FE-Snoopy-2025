@@ -13,7 +13,7 @@
      - [Differential](#differential)
      - [Steering](#steering)
      - [Chassis](#chassis)
-     - [Assembly]
+     - [Assembly](#assembly)
    - [Power and Sense management](#power-and-sense-managament)
      - [Component](#component)
      - [Sensor](#sensor)
@@ -133,7 +133,7 @@ Our robot is built to meet all the game’s requirements. It runs on two motors:
 
 
 #### Robot's Layer
-<img src="https://github.com/user-attachments/assets/aaca7009-b4dd-4e82-aebd-a0c9af01f0f8" width=375 height=750><br>
+<img src="https://github.com/user-attachments/assets/bfe8b641-9190-4233-9eda-972af249ff5b" width=375 height=750><br>
 The robot’s chassis is built in three layers: bottom, middle, and top.<br>
   - <b> Chassis: </b> This layer houses the motors with encoders, the steering servo, and the differential. A cutout at the rear of the chassis accommodates the differential, ensuring smooth operation. At the front, the servo and servo rod control the steering of the front wheels.
   - <b> Middle Layer: </b> This layer supports most of the sensors and electronic components, including the camera, LiDAR, motor driver, camera mount, ESP32, battery, and battery checker.
@@ -181,6 +181,53 @@ The robot uses a servo motor and a servo rod for steering. The servo is controll
 - <b>Front section</b>: Designed to allow smoother turning and wheel rotation without interference from other parts of the robot. This section also accommodates the servo motor.
 - <b>Middle section</b>: Serves as the mounting area for the motor. The motor driver and LiDAR are mounted upside down on the second layer of the car, connected above this section.
 - <b>Rear section</b>: Houses the differential and rear wheels, with a cutout that allows the differential to rotate freely. This section also connects the rear wheels to the differential.
+
+### Assembly
+#### Design and Planning
+<b>Step 1:</b>  We searched up some designs of the chassis online or took a look at last season's teams for inspiration.<br>
+<b>Step 2:</b> We discuss and finalize the design <br>
+<b>Step 3:<b> We start to design the chassis, the 1st and 2nd layer,  then the other components mount of the robot.<br>
+<b>Step 4:</b> We decide what material to use for the chassis, the robot’s layer, and the components mount.<br>
+
+#### Fabrication
+- For the Chassis, we chose aluminum since it’s light and strong.
+- For the robot’s layer, we use acrylic; it’s light, strong, and easy to laser cut.
+- For the other component’s mount, we 3D printed it.
+
+#### Assembly
+
+Step 1: Cut out the car chassis using Aluminum<br>
+Step 2: 3D print the Camera Mount, Differential Case, Battery  Holder, Battery Checker Holder, Right Rear Wheel Holder and the Differential Gear.<br>
+Step 3: Cut the Middle layers and the Top layers with Acrylic.<br>
+Step 4: Installation of the Chassis<br>
+
+<img width="670" height="403" alt="Screenshot 2025-08-26 205409" src="https://github.com/user-attachments/assets/23e9b873-5a83-4e9b-8dd4-d6401c118f17" /><br>
+
+1. Connect the servo’s mount, then connect it to the Servo
+2. Connect the Servo arm to the servo 
+3. Connect the servo rod with the servo arm
+4. Connect the steering with the wheel
+5. Install the differential, the wheel, and the motor
+
+Step 5: Installation of the middle layer<br>
+
+<img width="883" height="574" alt="Screenshot 2025-08-26 210239" src="https://github.com/user-attachments/assets/0383ef3c-1071-434b-8551-cf0ae4413dc3" />
+
+1. Connect the camera mount with the lidar 
+2. ESP-32 behind the camera mount
+3. The motor driver behind the lidar
+4. Install the battery holder
+5. Install the battery checker holder
+
+Step 8: Installation of the top layer<br>
+
+<img src=https://github.com/user-attachments/assets/0c6ff67d-b4a4-47b7-8ac2-8d19c603f146 width=500 height=1000><br>
+
+1. The PCB at the front
+2. The Raspberry Pi 5 in the middle
+3. The buck converter must be at least 50mm longer.
+
+<i>Note: We install the chassis, then continue installing the 2nd and 3rd layer by putting them on top of each other.</i>
 
 ## Power and Sense Managament
 ### Component
