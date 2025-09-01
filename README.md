@@ -2,11 +2,11 @@
 ---
 ## Table of Content
 1. [Introduce the team](#1introduce-the-team)
-2. [What is WRO?](#2.What-is-WRO?)
-   - [Why do we choose Future Engineer](#a.Why-do-we-choose-Future-Engineer)
-3. [Robot](#3.Robot)
-4. [Video](#4.Video)
-5. [Hardware](#5.Hardware)
+2. [What is WRO?](#2what-is-wro?)
+   - [Why do we choose Future Engineer](#why-do-we-choose-Future-Engineer)
+3. [Robot](#3robot)
+4. [Video](#4video)
+5. [Hardware](#5hardware)
    - Mobility Management
      - 3D design
      - Motor
