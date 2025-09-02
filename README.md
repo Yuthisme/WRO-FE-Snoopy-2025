@@ -116,7 +116,7 @@ Future Engineer is one of the interesting categories out of all four, because we
 <p><i>Left</i></p><br>
 <img src=https://github.com/user-attachments/assets/25bdfe51-36b7-429a-9112-4e32fe0abb61 width=500 height=1000><br>
 <p><i>Top</i></p><br>
-<img src=https://github.com/user-attachments/assets/8a8333b0-4e92-44d8-87d2-d1d121777486 width=500 height=1000><br>
+<img src=https://github.com/user-attachments/assets/8a8333b0-4e92-44d8-87d2-d1d121777486 width=1000 height=500><br>
 <p><i>Bottom</i></p><br>
 
 ---
