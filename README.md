@@ -106,6 +106,19 @@ Future Engineer is one of the interesting categories out of all four, because we
 # 3.Robot
 ---
 
+<img src=https://github.com/user-attachments/assets/d4c0f908-7834-4c11-8c7a-c09ecdeb7430 width=500 height=1000><br>
+<p><i>Front</i></p><br>
+<img src=https://github.com/user-attachments/assets/48096728-037c-4935-9bf4-27410156a170 width=500 height=1000><br>
+<p><i>Back</i></p><br>
+<img src=https://github.com/user-attachments/assets/beaf8659-a329-41f5-baac-ef2bb2fe59bd width=500 height=1000><br>
+<p><i>Right</i></p><br>
+<img src=https://github.com/user-attachments/assets/19dcca44-a504-450e-943a-3f8a13e979af width=500 height=1000><br>
+<p><i>Left</i></p><br>
+<img src=https://github.com/user-attachments/assets/25bdfe51-36b7-429a-9112-4e32fe0abb61 width=500 height=1000><br>
+<p><i>Top</i></p><br>
+<img src=https://github.com/user-attachments/assets/8a8333b0-4e92-44d8-87d2-d1d121777486 width=500 height=1000><br>
+<p><i>Bottom</i></p><br>
+
 ---
 # 4. Video
 ---
