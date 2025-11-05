@@ -3,7 +3,7 @@
 ## Table of Content
 1. [Introduce the team](#1introduce-the-team)
 2. [What is WRO?](#2what-is-wro)
-   - [Why do we choose Future Engineer](#why-we-choose-future-engineer)
+   - [Why do we choose Future Engineer](#why-we-chose-future-engineer)
 3. [Robot](#3robot)
 4. [Video](#4-video)
 5. [Hardware](#5-hardware)
@@ -93,7 +93,7 @@ Snoopy is a team of passionate young engineers. We started back in grade 11(2024
 ---
 WRO (World Robotics Olympiad) is a global robotics competition for young people. It aims to foster creativity, design, and problem-solving skills through challenging and educational robotics activities. WRO involves teams designing and programming robots to complete tasks or solve problems in various categories. [link](https://wro-association.org/)
 
-## Why we choose Future Engineer?
+## Why we chose Future Engineer?
 
 Future Engineer is one of the interesting categories out of all four, because we love to do challenging and complicated things. We chose this category because we all have an interest in cars and want to be involved in that type of engineering, which is our goal to become engineers in the future.
 
@@ -249,7 +249,7 @@ At the core of our robot, we have a Raspberry Pi 5 with 8GB of RAM. This Raspber
 <p><b> LiDAR (Light Detection and Ranging)</b></p><br>
 <p>It emits laser beams to measure distances to objects in its surroundings. It provides a 3D point cloud representation of the environment, enabling the robot to perceive obstacles, terrain, and other relevant features. Key applications of LiDAR in your self-driving robot include obstacle detection and avoidance, mapping and localization, and terrain analysis.</p><br>
 
-<p><b> Raspberry Pi 5 8GB RAM</b></p><br>
+<p><b> Raspberry Pi 5 16GB RAM</b></p><br>
 <p>The Raspberry Pi 5 serves as the brain of our self-driving robot. It processes sensor data, executes control algorithms, and communicates with other components. Key functionalities of the Raspberry Pi 5 in your robot include sensor data processing, algorithm execution, communication, and machine learning.</p><br>
 
 <p><b> Motor Driver</b></p><br>
@@ -262,13 +262,13 @@ At the core of our robot, we have a Raspberry Pi 5 with 8GB of RAM. This Raspber
 <p>A servo motor is a rotary actuator with a built-in position sensor. It allows precise control of the angle of rotation, making it ideal for steering mechanisms in self-driving robots. Key features of a servo motor include precision and holding torque.</p><br>
 
 <p><b>Raspberry Pi Camera Module 3</b></p>
-<p>The Raspberry Pi Camera Module 3 is a 12MP camera powered by the Sony IMX708 sensor with an autofocus lens. It captures still images up to 4608×2592 and records video at 1080p 60fps. The module offers improved low-light performance, HDR support, and a wider field of view compared to earlier models. It connects to the Raspberry Pi using a CSI ribbon cable and integrates seamlessly with libraries like Picamera2 and OpenCV.</p><br>
+<p>The Raspberry Pi Camera Module 3 is a 12MP Sony IMX708 autofocus camera; stills up to 4608×2592, video up to 1080p60, with HDR and improved low-light; CSI ribbon connection; works with Picamera2/OpenCV.</p><br>
  
 <p><b>ESP32</b></p><br>
 <p>The ESP32 is a powerful microcontroller with built-in Wi-Fi and Bluetooth. It has many pins for sensors and devices, making it popular for IoT, robotics, and smart gadgets. It’s low-cost, fast, and easy to program with Arduino or MicroPython. We use this to receive data from the Lidar and send the data to the Raspberry Pi</p><br>
 
 <p><b>RGB</b></p><br>
-<p>RGB stands for Red, Green, and Blue, the three primary colors of light. By mixing these colors in different intensities, almost any other color can be created. We use this to tell us when the robot is ready.</p>
+<p>RGB stands for Red, Green, and Blue, the three primary colors of light. By mixing these colors in different intensities, almost any other color can be created. We use this to tell the status of the robots.</p>
 
 ### Sensor
 Our robots use multiple sensors for different purposes, like the Lidar we use to detect the wall since it uses lasers to measure the distance between the wall and the robot, so it’ll make it easy to identify how far or how close the robot is when we test the robots in both open and obstacle challenges. The other sensor that we use is the Camera, which we use to detect the color of the traffic light during the obstacle challenge, so it can send a signal to the robot that either turn left or right. We also use IMU to track the position of the robot, we use it to count how many laps the robot has traveled, and to make the robot move in a fixed position.
@@ -317,7 +317,7 @@ To integrate these components, a ROS2-based system is meticulously crafted. LiDA
 ---
 # 7.Obstacle Management
 
-There are two challenges: the Open Challenge and the Obstacle Challenge. The open challenge requires the robot to drive three full laps around the game field and stop at its starting point. While the Obstacle challenge requires the robot to drive 3 full laps too but there are traffic lights and a parking lot. GREEN = right, RED = left. 
+There are two challenges: the Open Challenge and the Obstacle Challenge. The open challenge requires the robot to drive three full laps around the game field and stop at its starting point. While the Obstacle challenge requires the robot to drive 3 full laps too but there are traffic lights and a parking lot. GREEN = right, RED = left. [Officials Game Rule](https://wro-association.org/wp-content/uploads/WRO-2025-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
 
 ## Strategy 
 ### Open Challenge
